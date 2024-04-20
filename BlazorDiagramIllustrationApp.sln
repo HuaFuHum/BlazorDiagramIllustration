@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorDiagramIllustration", "BlazorDiagramIllustration\BlazorDiagramIllustration\BlazorDiagramIllustration.csproj", "{08F3109B-4DEC-42F6-90A7-94AE92D980AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorDiagramIllustration.Client", "BlazorDiagramIllustration\BlazorDiagramIllustration.Client\BlazorDiagramIllustration.Client.csproj", "{3F4EA792-9DE9-4664-8A5D-6E7F857B5FE0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08F3109B-4DEC-42F6-90A7-94AE92D980AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08F3109B-4DEC-42F6-90A7-94AE92D980AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08F3109B-4DEC-42F6-90A7-94AE92D980AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08F3109B-4DEC-42F6-90A7-94AE92D980AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F4EA792-9DE9-4664-8A5D-6E7F857B5FE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F4EA792-9DE9-4664-8A5D-6E7F857B5FE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F4EA792-9DE9-4664-8A5D-6E7F857B5FE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F4EA792-9DE9-4664-8A5D-6E7F857B5FE0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6BD9AFDF-D2EC-4A0F-8982-01D0CCB9F8F3}
+	EndGlobalSection
+EndGlobal

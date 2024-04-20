@@ -1,0 +1,49 @@
+﻿@using Blazor.Diagrams
+@using Blazor.Diagrams.Components
+@using Blazor.Diagrams.Core.Geometry
+@using Blazor.Diagrams.Core.Models
+@using BlazorDiagramIllustration.Components.CustomizedGroup
+
+<div class="diagram-container">
+    <CascadingValue Value="Diagram" IsFixed="true">
+        <DiagramCanvas></DiagramCanvas>
+    </CascadingValue>
+</div>
+
+@code {
+    private BlazorDiagram Diagram { get; set; } = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        Diagram = new BlazorDiagram();
+
+        Diagram.RegisterComponent<MyGroup, MyGroupWidget>();
+
+        var firstNode = Diagram.Nodes.Add(new NodeModel(new Point(50, 50)) { Title = "Node 1" });
+        var secondNode = Diagram.Nodes.Add(new NodeModel(new Point(200, 100)) { Title = "Node 2" });
+        var thirdNode = Diagram.Nodes.Add(new NodeModel(new Point(400, 150)) { Title = "Node 3" });
+
+        var fourthNode = Diagram.Nodes.Add(new NodeModel(new Point(400, 350)) { Title = "Node 4" });
+        fourthNode.AddPort(PortAlignment.Top);
+
+        var fifthNode = Diagram.Nodes.Add(new NodeModel(new Point(600, 350)) { Title = "Node 5" });
+        fifthNode.AddPort(PortAlignment.Top);
+
+        var innerGroup = Diagram.Groups.Add(new MyGroup(new[] { secondNode, thirdNode }));
+        innerGroup.Title = "Inner Group";
+        innerGroup.AddPort(PortAlignment.Bottom);
+        innerGroup.AddPort(PortAlignment.Right);
+
+        var outerGroup = Diagram.Groups.Add(new MyGroup(new[] { firstNode, innerGroup }));
+        outerGroup.Title = "Outer Group";
+        outerGroup.AddPort(PortAlignment.Bottom);
+
+        Diagram.Links.Add(new LinkModel(fourthNode.Ports.First(), innerGroup.Ports.First()));
+        Diagram.Links.Add(new LinkModel(fifthNode.Ports.First(), innerGroup.Ports.Last()));
+
+        Diagram.Links.Add(new LinkModel(fifthNode.Ports.First(), outerGroup.Ports.First()));
+
+
+    }
+}
